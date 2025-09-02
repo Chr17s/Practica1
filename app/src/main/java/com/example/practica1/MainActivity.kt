@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.practica1.ui.theme.Practica1Theme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,8 @@ class MainActivity : ComponentActivity() {
             Practica1Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Christian Hernandez",
+                        numcontrol = "22130813",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,9 +33,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(name: String, numcontrol: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "$name!",
+        modifier = modifier,
+        lineHeight = 116.sp
+    )
+    Text(
+        text = "$numcontrol",
         modifier = modifier
     )
 }
@@ -42,6 +49,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     Practica1Theme {
-        Greeting("Android")
+        Greeting("Android", "22130813")
     }
 }
